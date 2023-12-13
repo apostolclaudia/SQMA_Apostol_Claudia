@@ -1,0 +1,14 @@
+{
+    "name": "sqma_apostol_claudia",
+    "version": "1.0.0",
+    "description": "sqma hw",
+    "main": "calc.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "author": "Your Name",
+    "license": "MIT",
+    "devDependencies": {
+        "jest": "^28.1.3"
+    }
+}
