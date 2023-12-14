@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        choice(name: 'TEST_SUITE', choices: ['Suite1', 'Suite2'], description: 'Select a test suite')
+        choice(name: 'TEST_SUITE', choices: ['AdditionSuite', 'SubtractionSuite','MultiplyDivideSuite'], description: 'Select a test suite')
     }
 
     stages {
