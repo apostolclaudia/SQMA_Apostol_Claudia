@@ -21,6 +21,7 @@ pipeline {
                 script {
                     if (params.TEST_SUITE) {
                         echo "Running tests for suite: ${params.TEST_SUITE}"
+                         withEnv(["TEST_SUITE=${params.TEST_SUITE}"])
                         bat "TEST_SUITE=${params.TEST_SUITE} npm test"
                     } else {
                         error 'Please provide a test suite parameter'
