@@ -6,12 +6,6 @@ pipeline {
     }
 
     stages {
-        
-        stage('Cloning Git') {
-            steps {
-                git 'https://github.com/apostolclaudia/SQMA_Apostol_Claudia.git'
-            }
-        }
 
         stage('Install Dependencies') {
             steps {
