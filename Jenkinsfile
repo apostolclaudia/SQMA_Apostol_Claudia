@@ -16,7 +16,6 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    // Install Node.js dependencies
                     echo 'Installing dependencies...'
                     sh 'npm install'
                 }
@@ -26,7 +25,6 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    // Run the tests with the provided TEST_SUITE parameter
                     if (params.TEST_SUITE) {
                         echo "Running tests for suite: ${params.TEST_SUITE}"
                         sh "TEST_SUITE=${params.TEST_SUITE} npm test"
