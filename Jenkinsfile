@@ -10,8 +10,8 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    echo 'Installing dependencies...'
-                    sh 'npm install'
+                    echo "Installing dependencies..."
+                    bat 'npm install'
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
                 script {
                     if (params.TEST_SUITE) {
                         echo "Running tests for suite: ${params.TEST_SUITE}"
-                        sh "TEST_SUITE=${params.TEST_SUITE} npm test"
+                        bat "TEST_SUITE=${params.TEST_SUITE} npm test"
                     } else {
                         error 'Please provide a test suite parameter'
                     }
