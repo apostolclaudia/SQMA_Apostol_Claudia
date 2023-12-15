@@ -6,7 +6,6 @@ pipeline {
     }
 
     stages {
-
         stage('Install Dependencies') {
             steps {
                 script {
@@ -15,6 +14,7 @@ pipeline {
                 }
             }
         }
+
         stage('OWASP Dependency-Check Vulnerabilities') {
             steps {
                 dependencyCheck additionalArguments: ''' 
@@ -37,6 +37,12 @@ pipeline {
                         error 'Please provide a test suite parameter'
                     }
                 }
+            }
+        }
+
+        stage('All Tests (No Parameters)') {
+            steps {
+                build job: 'All_tests_no_parameters'
             }
         }
     }
